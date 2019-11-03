@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+{% include "submission/navbar.html" %}
+
+    <div class="mx-5">
+        {% if object_list %}
+            <div class="table-responsive">
+                <table class="table my-5">
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">GitHub Link</th>
+                            <th scope="col">Merged At</th>
+                            <th scope="col">Points Gained</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for obj in object_list %}
+                            <tr>
+                                <th scope="row">{{ forloop.counter }}</th>
+                                <td><a href="{{ obj.link }}">{{ obj.link }}</a></td>
+                                <td>{{ obj.merged_at }}</td>
+                                <td>{{ obj.points }}</td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="container mx-auto my-5">
+                <div class="alert alert-info" role="alert">
+                    No PR Merged or Server Is Syncing The Data. Please Be Patience.
+                </div>
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

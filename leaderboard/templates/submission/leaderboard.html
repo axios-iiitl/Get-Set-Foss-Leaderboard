@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+    <div class="jumbotron mx-auto text-center bg-whitesmoke leaderboard-main-container">
+        <div class="row leaderboard-main-row">
+            <div class="column">
+                <img src="{% static 'img/result.svg' %}" class="leaderboard-main-img">
+            </div>
+            <div class="column leaderboard-main-heading">
+                <h1>Get Set FOSS 2019<br/>Leaderboard</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">GitHub Username</th>
+                    <th scope="col">Total Points</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for obj in object_list %}
+                    <tr>
+                        <th scope="row">{{ forloop.counter }}</th>
+                        <td><a href="{{ obj.github_link }}" target="_blank">{{ obj.username }}</td>
+                        <td>{{ obj.total_points }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
