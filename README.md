@@ -54,15 +54,22 @@ Official leaderboard for Get Set FOSS.
 5. Each merged PR must have two labels so that it gets counted:
 
     * `getsetfoss2019`: Every PR must have this label so that it gets recognized as a valid PR for the event. If the PR doesn't have this label, it will get ignored and no points will be rewarded.
+
         * To change this to some other label, edit the `MAIN_LABEL` setting in `settings.py`.
+
     * Every PR must have a label which corresponds to its points. Valid labels are: `extra` (5 points), `very easy` (10 points), `easy` (15 points), `medium` (25 points), `hard` (30 points), `pro` (50 points) and `codeburst` (100 points).
+
         * To add/remove any label, edit the `POINTS_DATA` setting in `settings.py`.
+
         * Always run these two commands after editing `POINTS_DATA`:
+
             ```bash
             $ python manage.py makemigrations
             $ python manage.py migrate
             ```
+
 6. To sync the latest data, run `sync_data` command:
+
     ```bash
     $ python manage.py sync_data
     ```
