@@ -1,0 +1,78 @@
+.is-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.github-btn {
+    background-color: #24292e;
+    color: white;
+}
+
+.bg-whitesmoke {
+    background-color: whitesmoke;
+}
+
+.color-green {
+    color: green;
+}
+
+.color-red {
+    color: red;
+}
+
+.main-page-logo {
+    width: 50%;
+}
+
+.github-btn:hover {
+    text-decoration: none;
+}
+
+@media (max-width: 760px) {
+    .home-heading {
+        font-size: 25px;
+    }
+    .jumbotron.jumbotron-fluid {
+        width: 100%;
+    }
+    .main-page-logo {
+        width: 70%;
+    }
+}
+
+.mx-r-3 {
+    margin-right: 1rem!important;
+}
+
+.leaderboard-main-row {
+    justify-content: center;
+}
+
+.leaderboard-main-img {
+    width: 300px;
+}
+
+.leaderboard-main-heading {
+    display: flex;
+    align-items: flex-end;
+}
+
+.leaderboard-main-container {
+    padding-top: 0px;
+    padding-bottom: 25px;
+}
+
+@media (max-width: 619px) {
+    .leaderboard-main-heading h1 {
+        font-size: 30px;
+        margin-top:25px;
+    }
+}
+
+@media (max-width: 320px) {
+    .leaderboard-main-img {
+        width: 200px;
+    }
+}

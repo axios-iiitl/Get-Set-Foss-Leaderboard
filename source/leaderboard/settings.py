@@ -2,6 +2,7 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONTENT_DIR = os.path.join(BASE_DIR, 'content')
 
 
 # Quick-start development settings - unsuitable for production
@@ -54,10 +55,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(
-                os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                'templates'
-            ),
+            os.path.join(CONTENT_DIR, 'templates'),
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -122,9 +120,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (
-    os.path.join(os.path.dirname(BASE_DIR), 'static_dir'),
+    os.path.join(CONTENT_DIR, 'assets'),
 )
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), 'static_root')
+STATIC_ROOT = os.path.join(CONTENT_DIR, 'media')
 
 
 # django-allauth
