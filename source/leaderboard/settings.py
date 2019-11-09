@@ -184,6 +184,7 @@ LOGGING = {
 # Necessary label
 MAIN_LABEL = 'getsetfoss2019'
 POINTS_DATA = {
+    'extra': 5,
     'very easy': 10,
     'easy': 15,
     'medium': 25,
@@ -191,3 +192,4 @@ POINTS_DATA = {
     'pro': 50,
     'codeburst': 100,
 }
+POINTS_DATA_TUPLE = tuple((point, label) for label, point in POINTS_DATA.items())
