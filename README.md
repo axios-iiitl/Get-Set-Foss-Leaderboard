@@ -7,20 +7,22 @@ Official leaderboard for Get Set FOSS.
 1. Clone the repository:
 
     ```
-    $ git clone https://github.com/dojutsu-user/Get-Set-Foss---Leaderboard.git
+    $ git clone https://github.com/dojutsu-user/Get-Set-Foss-Leaderboard.git
     ```
 
-2. Create a virtual environment, activate it and install all dependencies:
+2. Change the directory, create a virtual environment, activate it and install all dependencies:
 
     ```bash
+    $ cd Get-Set-Foss-Leaderboard/
     $ virtualenv venv --python=python3.7
     $ source venv/bin/activate
     $ pip install -r requirements.txt
     ```
 
-3. Run the `makemigrations` and `migrate` command:
+3. Change the directory and run the `makemigrations` and `migrate` command:
 
     ```bash
+    $ cd source/
     $ python manage.py makemigrations
     $ python manage.py migrate
     ```
