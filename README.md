@@ -7,7 +7,7 @@ Official leaderboard for Get Set FOSS.
 1. Clone the repository:
 
     ```
-    $ git clone https://github.com/dojutsu-user/Get-Set-Foss-Leaderboard.git
+    $ git clone https://github.com/axios-iiitl/Get-Set-Foss-Leaderboard.git
     ```
 
 2. Change the directory, create a virtual environment, activate it and install all dependencies:
