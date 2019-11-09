@@ -179,9 +179,8 @@ LOGGING = {
 }
 
 
-# GetSetFOSS Data
+# Get Set FOSS Data
 
-# Necessary label
 MAIN_LABEL = 'getsetfoss2019'
 POINTS_DATA = {
     'extra': 5,
@@ -193,3 +192,4 @@ POINTS_DATA = {
     'codeburst': 100,
 }
 POINTS_DATA_TUPLE = tuple((point, label) for label, point in POINTS_DATA.items())
+GITHUB_PERSONAL_ACCESS_TOKEN = 'insert-token-here'

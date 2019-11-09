@@ -42,7 +42,7 @@ class Command(BaseCommand):
                             ]
 
                             if points_list:
-                                points = sum(points)
+                                points = sum(points_list)
                             else:
                                 points = 0
 
@@ -69,6 +69,9 @@ class Command(BaseCommand):
 
         link_template = 'https://api.github.com/repos/{owner}/{repo}/pulls?state=closed&page={page_no}'
         final_data = []
+        headers = {
+            'Authorization': f'token {settings.GITHUB_PERSONAL_ACCESS_TOKEN}',
+        }
 
         try:
             for page_no in range(1000):
@@ -80,7 +83,7 @@ class Command(BaseCommand):
 
                 log.info('Getting data for %s', link)
 
-                response = requests.get(link)
+                response = requests.get(link, headers=headers)
                 if response.status_code == 200:
                     data = response.json()
 
@@ -101,6 +104,7 @@ class Command(BaseCommand):
 
     def _get_prs_labels(self, pr_data, pr_link):
         """Returns all labels for a PR."""
+
         labels = []
 
         try:

@@ -47,10 +47,11 @@ Official leaderboard for Get Set FOSS.
 
 ## Automating The Leaderboard
 
-1. Add participating repositories from the admin panel.
-2. Every participant must sign in with GitHub.
-3. Only merged PRs will result into points.
-4. Each merged PR must have two labels so that it gets counted:
+1. Add your **GitHub Personal Access Token** in `settings.py`. Edit the `GITHUB_PERSONAL_ACCESS_TOKEN` setting and insert your token there. You can read more about creating your own personal access token here: https://git.io/JeuQ3.
+2. Add participating repositories from the admin panel.
+3. Every participant must sign in with GitHub.
+4. Only merged PRs will result into points.
+5. Each merged PR must have two labels so that it gets counted:
 
     * `getsetfoss2019`: Every PR must have this label so that it gets recognized as a valid PR for the event. If the PR doesn't have this label, it will get ignored and no points will be rewarded.
         * To change this to some other label, edit the `MAIN_LABEL` setting in `settings.py`.
@@ -61,7 +62,7 @@ Official leaderboard for Get Set FOSS.
             $ python manage.py makemigrations
             $ python manage.py migrate
             ```
-5. To sync the latest data, run `sync_data` command:
+6. To sync the latest data, run `sync_data` command:
     ```bash
     $ python manage.py sync_data
     ```
