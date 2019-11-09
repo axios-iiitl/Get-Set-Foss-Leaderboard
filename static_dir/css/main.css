@@ -23,7 +23,7 @@
 }
 
 .main-page-logo {
-    width:70%;
+    width: 50%;
 }
 
 .github-btn:hover {
@@ -36,6 +36,9 @@
     }
     .jumbotron.jumbotron-fluid {
         width: 100%;
+    }
+    .main-page-logo {
+        width: 70%;
     }
 }
 

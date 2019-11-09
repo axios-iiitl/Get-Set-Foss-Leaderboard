@@ -30,6 +30,7 @@ class Submission(models.Model):
         (50, 50),
     ))
     link = models.URLField('GitHub link')
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return f'Submission by {self.user}'

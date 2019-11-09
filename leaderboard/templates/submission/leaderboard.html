@@ -15,7 +15,10 @@
     </div>
 
     <div class="container">
-        <table class="table table-striped">
+        {% if last_updated %}
+            <span class="badge badge-info">Last Updated At: {{ last_updated }}</span>
+        {% endif %}
+        <table class="table table-striped my-3">
             <thead>
                 <tr>
                     <th scope="col">#</th>

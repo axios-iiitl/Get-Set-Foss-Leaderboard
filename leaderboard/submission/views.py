@@ -60,3 +60,11 @@ class Leaderboard(ListView):
             data = sorted(data, key=operator.itemgetter('total_points'), reverse=True)
 
         return data
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        obj = Submission.objects.all().order_by('-created_at').first()
+        if obj:
+            context['last_updated']: last_updated.created_at
+
+        return context

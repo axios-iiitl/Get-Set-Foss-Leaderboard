@@ -73,6 +73,8 @@ class Command(BaseCommand):
                     page_no=page_no+1,
                 )
 
+                log.info('Getting data for %s', link)
+
                 response = requests.get(link)
                 if response.status_code == 200:
                     data = response.json()
@@ -81,8 +83,10 @@ class Command(BaseCommand):
                         break
 
                     for pr in data:
-                        if pr['merged_at'] != 'null':
+                        if pr['merged_at'] != None:
                             final_data.append(pr)
+                else:
+                    log.info('%s response for %s:' % (response.status_code, link))
 
         except Exception:
             log.exception('Error while getting all merged PRs for repo %s', repo)

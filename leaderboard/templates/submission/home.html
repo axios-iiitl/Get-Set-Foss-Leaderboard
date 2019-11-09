@@ -3,7 +3,7 @@
 {% load static %}
 
 {% block content %}
-
+ 
     <div class="jumbotron jumbotron-fluid is-center bg-whitesmoke text-center">
         <div class="container">
             <h2 class="home-heading">Get Set FOSS - Leaderboard</h2>
@@ -16,6 +16,7 @@
                         <a href="{% provider_login_url 'github' %}" class="btn-lg btn-dark github-btn">
                             <i class="fab fa-github"></i> Login with GitHub
                         </a>
+                        <p class="my-3"><a href="{% url 'leaderboard' %}" target="_blank">View Leaderboard</a></p>
                     {% else %}
                         <h3>Hello <strong>{{ request.user }}</strong></h3>
                     {% endif %}
