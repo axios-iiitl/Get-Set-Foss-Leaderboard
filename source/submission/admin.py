@@ -8,6 +8,9 @@ class RepositoryAdmin(admin.ModelAdmin):
 
 class SubmissionAdmin(admin.ModelAdmin):
     list_display = ['__str__', 'merged_at', 'points', 'link']
+    readonly_fields = ['created_at']
+    search_fields = ['user__username']
+    list_filter = ['user__username']
 
 
 admin.site.register(Submission, SubmissionAdmin)

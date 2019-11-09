@@ -23,11 +23,12 @@ class Submission(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     merged_at = models.DateTimeField('Submitted At')
     points = models.IntegerField(choices=(
-        (10, 10),
-        (15, 15),
-        (25, 25),
-        (30, 30),
-        (50, 50),
+        (10, 10),  # very easy
+        (15, 15),  # easy
+        (25, 25),  # medium
+        (30, 30),  # hard
+        (50, 50),  # pro
+        (100, 100),  # codeburst
     ))
     link = models.URLField('GitHub link')
     created_at = models.DateTimeField(auto_now_add=True)

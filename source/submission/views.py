@@ -65,6 +65,6 @@ class Leaderboard(ListView):
         context = super().get_context_data(**kwargs)
         obj = Submission.objects.all().order_by('-created_at').first()
         if obj:
-            context['last_updated']: last_updated.created_at
+            context['last_updated'] = obj.created_at
 
         return context

@@ -177,3 +177,17 @@ LOGGING = {
         },
     }
 }
+
+
+# GetSetFOSS Data
+
+# Necessary label
+MAIN_LABEL = 'getsetfoss2019'
+POINTS_DATA = {
+    'very easy': 10,
+    'easy': 15,
+    'medium': 25,
+    'hard': 30,
+    'pro': 50,
+    'codeburst': 100,
+}
